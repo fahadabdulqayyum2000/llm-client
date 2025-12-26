@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
 
 type Role = "user" | "assistant";
 type Message = { id: string; role: Role; content: string };
@@ -72,6 +73,27 @@ export default function ChatShell() {
     <div className="mx-auto w-full max-w-4xl px-4 py-10">
       <div className="mb-6 flex flex-col gap-2">
         <div className="flex items-center gap-3">
+  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white ring-1 ring-border shadow-sm">
+    <Image
+      src="/logo/clicktap.png"
+      alt="Clicktap"
+      width={28}
+      height={28}
+      priority
+    />
+  </div>
+
+  <div className="flex flex-col">
+    <h1 className="text-2xl font-semibold tracking-tight">
+      Clicktap Chat
+    </h1>
+    <p className="text-sm text-muted-foreground">
+      Internal assistant — fast answers, clean responses.
+    </p>
+  </div>
+</div>
+
+        {/* <div className="flex items-center gap-3">
           <div className="h-10 w-10 rounded-2xl bg-primary/10 ring-1 ring-primary/15" />
           <div className="flex flex-col">
             <h1 className="text-2xl font-semibold tracking-tight">Clicktap Chat</h1>
@@ -83,7 +105,7 @@ export default function ChatShell() {
             <Badge variant="secondary">Production</Badge>
             <Badge variant="outline">RAG</Badge>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <Card className="rounded-2xl shadow-sm">
